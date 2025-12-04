@@ -1,0 +1,63 @@
+@use '../utils' as *;
+
+.text-block {
+  padding: toRem(100) 0; 
+  background-color: #faf9dd;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: row; 
+      gap: toRem($tablet-gutter); 
+    }
+
+    @media (max-width: $bp-mobile) {
+      flex-direction: column; 
+      gap: toRem(30);
+    }
+  }
+
+  &__title {
+    $title-span: 6;
+    $title-width: ($title-span * $col-width) + (($title-span - 1) * $gutter);
+    
+    flex: 0 1 toRem($title-width);   
+    min-width: 0; 
+    
+    font-size: toRem(40);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: $color-black;
+    
+  }
+
+  &__desc {
+    $desc-span: 5;
+    $desc-width: ($desc-span * $col-width) + (($desc-span - 1) * $gutter);
+
+    flex: 0 1 toRem($desc-width);   
+    min-width: 0; 
+    
+    font-size: toRem(16);
+    line-height: 1.6;
+    color: #666;      
+    
+    max-width: toRem(500); 
+  }
+
+  &__title,
+  &__desc {
+    @media (max-width: $bp-tablet) {
+      flex: 0 0 calc(50% - #{toRem($tablet-gutter / 2)});
+      min-width: 0;
+    }
+
+    @media (max-width: $bp-mobile) {
+      flex: 1 1 100%; 
+    }
+  }
+}

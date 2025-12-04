@@ -1,0 +1,39 @@
+@use '../utils' as *;
+
+.hero {
+  height: toRem(720); 
+  width: 100%;
+  background-image: url('../images/hero.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: flex-end; 
+  padding-bottom: toRem(80);
+
+  &__title {
+    color: $color-white; 
+    font-size: toRem(80);
+    line-height: 1.1;
+    font-weight: bold;
+  }
+
+    @media (max-width: $bp-tablet) {
+    background-size: cover;
+    background-position: center center;
+    
+    &__title {
+      font-size: toRem(60); 
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    height: toRem(500); 
+    
+    &__title {
+      font-size: toRem(40);
+      letter-spacing: 0; 
+    }
+  }
+}
