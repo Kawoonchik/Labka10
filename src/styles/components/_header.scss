@@ -70,7 +70,11 @@
     width: 24px;  
     height: 24px;
 
-    .icon-burger { display: block; }
+    .icon-burger { 
+      display: block; 
+      width: 100%;
+      height: 100%;
+    }
     .icon-close  { display: none; }
 
     transition: transform 0.3s ease;
