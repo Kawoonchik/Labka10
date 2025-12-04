@@ -83,3 +83,8 @@
     fill: $color;
   }
 }
+
+@mixin text-style($size, $weight: normal) {
+  font-size: toRem($size);
+  font-weight: $weight;
+}
