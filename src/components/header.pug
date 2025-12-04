@@ -1,4 +1,20 @@
 header.header
-    .header-inner
-        include logo
+  input#menu-toggle(type="checkbox", style="display: none;")
+
+  .container.header__container
+    a.header__logo(href="#") BANG & OLUFSEN
+    
+    .header__menu-overlay
+      .container
+        .header__overlay-top
+           a.header__logo(href="#") BANG & OLUFSEN
         include navigation
+    
+    .header__actions
+      .header__phone
+        | +1 234 555-55-55
+        img.header__icon(src="images/phone.svg", alt="Phone")
+      
+      label.header__menu-btn(for="menu-toggle")
+        img.icon-burger(src="./images/menu.svg", alt="Menu")
+        img.icon-close(src="./images/close.svg", alt="Close")
